@@ -16,7 +16,7 @@ const Form = () => {
 
 //Error Messages Logic
     const firstNameMessage = (e) => {
-        setFirstName(e.target.value) //
+        setFirstName(e.target.value) 
         if(e.target.value.length < 2){
             setFirstNameError("First name must be at least 2 characters")
         }else{
