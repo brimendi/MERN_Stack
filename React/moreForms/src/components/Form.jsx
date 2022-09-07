@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react' //using state and importing react <must haves>
+// rafce 
 const Form = () => {
-//Info inputs
+//Set State for info inputs
     const [firstname, setFirstName] = useState("")
     const [lastname, setLastName] = useState("")
     const [emailaddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [confirmpassword, setConfirmPassword] = useState("")
-//Errors
+//Set state for input errors
     const [firstNameError, setFirstNameError] = useState("")
     const [lastNameError, setLastNameError] = useState("")
     const [emailAddressError, setEmailAddressError] = useState("")
@@ -15,14 +15,14 @@ const Form = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState("")
 
 //Error Messages Logic
-    const firstNameMessage = (e) => {
-        setFirstName(e.target.value) 
-        if(e.target.value.length < 2){
+    const firstNameMessage = (e) => { //must add e to use event
+        setFirstName(e.target.value) //
+        if(e.target.value.length < 2){ 
             setFirstNameError("First name must be at least 2 characters")
         }else{
-            setFirstNameError("")
+            setFirstNameError("") // if validated 
         }
-        if(!e.target.value){
+        if(!e.target.value){ //*** SENSEI BONUS  *** only show validations if typed into 
             setFirstNameError("")
         }
     }
@@ -80,31 +80,76 @@ const Form = () => {
     return(
         <div>
             {/* Form Start  */}
-    <form>
+        <form>
             <div>
                 <label>First Name: </label> 
-                <input type="text" name="firstname" value={firstname} onChange={firstNameMessage} />
-                <span style={{color: "red"}}>{firstNameError}</span>
+                <input 
+                    type="text" 
+                    name="firstname" 
+                    value={firstname} 
+                    onChange={firstNameMessage} //Where the validations are grabbed and implementeed
+                />
+                <span 
+                    style={{color: "red"}}  //makes validations red
+                >
+                    {firstNameError}
+                </span>
             </div>
             <div>
                 <label>Last Name: </label> 
-                <input type="text" name="lastname" value={lastname} onChange={ lastNameMessage}/>
-                <span style={{color: "red"}}>{lastNameError}</span>
+                <input 
+                    type="text"
+                    name="lastname" 
+                    value={lastname} 
+                    onChange={ lastNameMessage}
+                />
+                <span 
+                    style={{color: "red"}}
+                >
+                    {lastNameError}
+                </span>
             </div>
             <div>
                 <label>Email Address: </label> 
-                <input type="text" name="emailaddress" value={emailaddress} onChange={emailAddressMessage }/>
-                <span style={{color: "red"}}>{emailAddressError}</span>
+                <input 
+                    type="text" 
+                    name="emailaddress" 
+                    value={emailaddress} 
+                    onChange={emailAddressMessage }
+                />
+                <span 
+                    style={{color: "red"}}
+                >
+                    {emailAddressError}
+                </span>
             </div>
             <div>
                 <label>Password: </label>
-                <input type="text" name="password" value={password} onChange={ passwordMessage } />
-                <span style={{color: "red"}}>{passwordError}</span>
+                <input 
+                    type="text"
+                    name="password" 
+                    value={password} 
+                    onChange={ passwordMessage } 
+                />
+                <span 
+                    style={{color: "red"}}
+                >
+                    {passwordError}
+                </span>
             </div>
             <div>
                 <label>Confirm Password: </label>
-                <input type="text" name="confirmpassword" value={confirmpassword} onChange={ confirmPasswordMessage }/>
-                <span style={{color: "red"}}>{confirmPasswordError}</span>
+                <input 
+                    type="text" 
+                    name="confirmpassword" 
+                    value={confirmpassword} 
+                    onChange={ confirmPasswordMessage }
+                />
+                <span 
+                    style={{color: "red"}}
+                >
+                    {confirmPasswordError}
+                </span>
                 
             </div>
         </form>
@@ -113,4 +158,4 @@ const Form = () => {
 }
 
 
-export default Form;
+export default Form;//<musthave>
