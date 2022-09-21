@@ -1,14 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import Form from './components/Form';
+import Form from './components/Form'; //import component <musthave>
 
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+      {/* name components for import <musthave>*/} 
+      <Form/> 
     </div>
   );
 }
 
-export default App;
+{/* <musthave> */}
+export default App; 

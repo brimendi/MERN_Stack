@@ -1,4 +1,4 @@
-import React, { useState } from 'react' //using state and importing react <must haves>
+import React, { useState } from 'react' //importing react and using state <must have>
 // rafce 
 const Form = () => {
 //Set State for info inputs
@@ -16,7 +16,7 @@ const Form = () => {
 
 //Error Messages Logic
     const firstNameMessage = (e) => { //must add e to use event
-        setFirstName(e.target.value) //
+        setFirstName(e.target.value) //setting the input here instead of html form <OnChange>
         if(e.target.value.length < 2){ 
             setFirstNameError("First name must be at least 2 characters")
         }else{
@@ -87,7 +87,7 @@ const Form = () => {
                     type="text" 
                     name="firstname" 
                     value={firstname} 
-                    onChange={firstNameMessage} //Where the validations are grabbed and implementeed
+                    onChange={firstNameMessage} //Where the validations are pulled and implemented
                 />
                 <span 
                     style={{color: "red"}}  //makes validations red
